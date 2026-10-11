@@ -1,12 +1,7 @@
 
-package com.feedback.studentfeedback;
+package com.example.StudentFeedback;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "feedback")
@@ -16,25 +11,15 @@ public class Feedback {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "student_name")
     private String studentName;
-
-    @Column(name = "roll_number")
     private String rollNumber;
-
     private String department;
-    private String subject;
-    private String teacher;
+    private String comments;
     private Integer rating;
 
-    @Column(length = 2000)
-    private String comments;
-
-    // Default constructor required by JPA
     public Feedback() {
     }
 
-    // Getters and setters
     public Long getId() {
         return id;
     }
@@ -63,20 +48,12 @@ public class Feedback {
         this.department = department;
     }
 
-    public String getSubject() {
-        return subject;
+    public String getComments() {
+        return comments;
     }
 
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-
-    public String getTeacher() {
-        return teacher;
-    }
-
-    public void setTeacher(String teacher) {
-        this.teacher = teacher;
+    public void setComments(String comments) {
+        this.comments = comments;
     }
 
     public Integer getRating() {
@@ -85,13 +62,5 @@ public class Feedback {
 
     public void setRating(Integer rating) {
         this.rating = rating;
-    }
-
-    public String getComments() {
-        return comments;
-    }
-
-    public void setComments(String comments) {
-        this.comments = comments;
     }
 }
