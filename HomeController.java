@@ -2,7 +2,6 @@
 package com.example.StudentFeedback;
 
 import java.util.Map;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,7 +13,12 @@ public class HomeController {
         return Map.of(
             "message", "Student Feedback System Backend is running!",
             "status", "success",
-            "api", "/api/feedback"
+            "feedbackApi", "/api/feedback"
         );
+    }
+
+    @GetMapping("/health")
+    public Map<String, String> health() {
+        return Map.of("status", "UP");
     }
 }
