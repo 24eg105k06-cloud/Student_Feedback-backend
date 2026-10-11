@@ -1,4 +1,4 @@
-package com.feedback.studentfeedback;
+package com.example.StudentFeedback;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
